@@ -19,12 +19,23 @@
             height: 400px;
             border: 1px solid red;
         }
+        button {
+            padding: 10px;
+        }
     </style>
 <body>
     <h1>canvas learning</h1>
     <div id="container">
-        <canvas id="myCanvas"></canvas>
+        <!--
+            canvas的尺寸最好还是在标签上设置好
+        -->
+        <canvas width="800" height="800" id="myCanvas"></canvas>
     </div>
+    <h3>矩形相关</h3>
+    <p>
+        <button id="step1_draw">矩形绘制</button>
+        <button id="step1_clear">矩形清除</button>
+    </p>
     <script type="text/javascript" src="/index.js"></script>
 </body>
 </html>
