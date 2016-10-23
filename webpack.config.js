@@ -30,6 +30,9 @@ module.exports = {
             colors: true
         }
     },
+    // externals:{
+    //     'creajs':'window.creajs'
+    // },
     entry: {
         index: APP_PATH + '/index',
     },
@@ -57,7 +60,6 @@ module.exports = {
         //后缀名自动补全
         extensions: ['.js'],
         alias: {
-            
         }
     }
 };

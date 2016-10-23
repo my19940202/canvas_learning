@@ -1,3 +1,4 @@
+// let myCreatejs = require('../bower_components/EaselJS/lib/easeljs-0.8.2.combined.js');
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 let Global = {
@@ -9,7 +10,7 @@ let Global = {
     select: function (name) {
         return document.querySelectorAll(name);
     }
-}
+};
 
 export {
     Global

@@ -47,7 +47,37 @@ function arcDraw() {
     ctx.stroke();
 }
 arcDraw();
-// console.log('------')
+
+// 划线
+// context.moveTo(x,y)  context.lineTo(x,y)
+let lineConf = [300, 300];
+function lineDraw() {
+    ctx.strokeStyle = 'rgb(255,0,0)';
+    // ctx.fillStyle = 'rgb(255,0,0)';
+    ctx.moveTo(...lineConf);
+    lineConf[0] += 300;
+    lineConf[1] += 300;
+    ctx.lineTo(...lineConf);
+    // ctx.fill();
+    ctx.stroke();
+}
+lineDraw();
+
+// 贝塞尔曲线
+// 绘制贝塞尔曲线（贝济埃、bezier）context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y) 
+// 绘制二次样条曲线 context.quadraticCurveTo(qcpx,qcpy,qx,qy)
+function bsr() {
+    ctx.strokeStyle = 'rgb(0,0,255)';
+    // ctx.fillStyle = 'rgb(0,0,255)';
+    ctx.moveTo(50, 50);
+    ctx.bezierCurveTo(50, 50,150, 50, 150, 150);
+    ctx.stroke();
+    ctx.quadraticCurveTo(150, 250, 250, 250);
+    ctx.stroke();
+}
+bsr();
+
+
 
 
 // event bind
