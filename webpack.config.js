@@ -35,6 +35,8 @@ module.exports = {
     // },
     entry: {
         index: APP_PATH + '/index',
+        circle: APP_PATH + '/circle',
+
     },
     output: {
         publicPath,
