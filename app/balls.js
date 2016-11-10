@@ -16,17 +16,19 @@ class Ball {
         this.name = "";
         this.color = utils.parseColor(color);
         this.lineWidth = 1;
+        this.text = '';
     }
 
-    setText(context, txt) {
+    setText(context) {
         context.save();
+        context.strokeStyle = "#fff";
         context.font = 'italic 20px sans-serif';
         context.textBaseline = 'top';
         //填充字符串
-        if (!txt) {
-            txt = 'default text';
+        if (!this.text) {
+            this.text = '屌丝';
         }
-        context.strokeText(txt, this.x - this.radius / 2, this.y + 50);
+        context.strokeText(this.text, this.x - this.radius / 2, this.y - this.radius / 2);
         context.restore();
     }
 
@@ -44,6 +46,7 @@ class Ball {
         context.fill();
         context.stroke();
         context.restore();
+        this.setText(context);
     }
 
     getBounds() {

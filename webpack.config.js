@@ -37,7 +37,8 @@ module.exports = {
         index: APP_PATH + '/index',
         circle: APP_PATH + '/circle',
         speed_accelerate: APP_PATH + '/speed_accelerate',
-        bounce_ball: APP_PATH + '/bounce_ball'
+        bounce_ball: APP_PATH + '/bounce_ball',
+        more_ball: APP_PATH + '/more_ball'
 
     },
     output: {

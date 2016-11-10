@@ -32,9 +32,8 @@ utils.RotationToMouse = function (mx,my,ox,oy) {
 //捕获坐标
 utils.captureMouse = function(element){
         var mouse = {x:0,y:0};
-        
-        element.addEventListener('mousemove',function(event){
-            var x,y;
+        var x,y;
+        var handleEvent = function (event) {
             if(event.pageX||event.pageY){
                 x = event.pageX;
                 y = event.pageY;
@@ -42,16 +41,40 @@ utils.captureMouse = function(element){
                 x = event.clientX + document.body.scrollLeft +document.documentElement.scrollLeft;
                 y = event.clientY + document.body.scrollTop +document.documentElement.scrollTop;
             }
-            
             x -= element.offsetLeft;
             y -= element.offsetTop;
-            
             mouse.x = x;
-            mouse.y = y;          
-        },false);
+            mouse.y = y;
+        };
+        element.addEventListener('mousemove',function(event){
+            handleEvent(event);   
+        }, false);
         
-         return mouse;  
+        return mouse;
     }
+
+utils.captureClickMouse = function (element) {
+    var mouse = {x:0,y:0};
+    var x,y;
+    var handleEvent = function (event) {
+        if(event.pageX||event.pageY){
+            x = event.pageX;
+            y = event.pageY;
+        }else{
+            x = event.clientX + document.body.scrollLeft +document.documentElement.scrollLeft;
+            y = event.clientY + document.body.scrollTop +document.documentElement.scrollTop;
+        }
+        x -= element.offsetLeft;
+        y -= element.offsetTop;
+        mouse.x = x;
+        mouse.y = y;
+    };
+    element.addEventListener('click',function(event){
+        handleEvent(event);   
+    }, false);
+    
+    return mouse;
+};
     
     //获取触摸事件坐标
 utils.captureTouch = function (element) {
