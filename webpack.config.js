@@ -37,8 +37,11 @@ module.exports = {
         index: APP_PATH + '/index',
         circle: APP_PATH + '/circle',
         speed_accelerate: APP_PATH + '/speed_accelerate',
+        //ball相关的实践
         bounce_ball: APP_PATH + '/bounce_ball',
-        more_ball: APP_PATH + '/more_ball'
+        more_ball: APP_PATH + '/more_ball',
+        shoot_balls: APP_PATH + '/shoot_balls/app',
+        typing_game: APP_PATH + '/shoot_balls/typing_game',
 
     },
     output: {

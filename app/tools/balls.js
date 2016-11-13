@@ -17,12 +17,13 @@ class Ball {
         this.color = utils.parseColor(color);
         this.lineWidth = 1;
         this.text = '';
+        this.textSize = 12;
     }
 
     setText(context) {
         context.save();
         context.strokeStyle = "#fff";
-        context.font = 'italic 12px sans-serif';
+        context.font = 'italic ' + this.textSize + 'px sans-serif';
         context.textBaseline = 'top';
         //填充字符串
         if (!this.text) {
