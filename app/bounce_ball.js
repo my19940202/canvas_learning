@@ -1,6 +1,6 @@
 import {Global} from './global';
-import {utils} from './utils';
-import {Ball} from './Balls';
+import {utils} from './tools/utils';
+import {Ball} from './tools/Balls';
 let canvas = Global.canvas;
 let ctx = Global.ctx;
 

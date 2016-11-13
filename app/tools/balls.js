@@ -22,11 +22,11 @@ class Ball {
     setText(context) {
         context.save();
         context.strokeStyle = "#fff";
-        context.font = 'italic 20px sans-serif';
+        context.font = 'italic 12px sans-serif';
         context.textBaseline = 'top';
         //填充字符串
         if (!this.text) {
-            this.text = '屌丝';
+            this.text = '屌';
         }
         context.strokeText(this.text, this.x - this.radius / 2, this.y - this.radius / 2);
         context.restore();

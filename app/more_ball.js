@@ -1,8 +1,10 @@
 import {Global} from './global';
-import {utils} from './utils';
-import {Ball} from './Balls';
+import {utils} from './tools/utils';
+import {Ball} from './tools/Balls';
 let canvas = Global.canvas;
 let ctx = Global.ctx;
+// 感觉好玩 mousemove click 产生小球 但是没有
+// 做性能上的优化  以后有空有必要再去加个性能优化
 
 window.onload = function(){
     let ball = new Ball(20, "red");
@@ -64,7 +66,7 @@ window.onload = function(){
         let randomBall = new Ball(20, ballBgColor);
         randomBall.x = mouseClickPos.x;
         randomBall.y = mouseClickPos.y;
-        randomBall.text = 
+        randomBall.text = ballWords[Math.floor(Math.random() * ballWords.length)];
         ballArr.push(randomBall);
     }, false);
 
@@ -78,7 +80,7 @@ window.onload = function(){
         let randomBall = new Ball(20, ballBgColor);
         randomBall.x = mouseMousePos.x;
         randomBall.y = mouseMousePos.y;
-        randomBall.text = 
+        randomBall.text = ballWords[Math.floor(Math.random() * ballWords.length)];
         ballArr.push(randomBall);
     }, false);
 
@@ -95,3 +97,4 @@ window.onload = function(){
         ballArr.push(randomBall);
     }, false);
 }
+
