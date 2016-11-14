@@ -22,7 +22,7 @@ class Ball {
 
     setText(context) {
         context.save();
-        context.strokeStyle = "#fff";
+        context.strokeStyle = "#CCC";
         context.font = 'italic ' + this.textSize + 'px sans-serif';
         context.textBaseline = 'top';
         //填充字符串

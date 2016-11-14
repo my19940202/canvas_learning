@@ -30,9 +30,6 @@ module.exports = {
             colors: true
         }
     },
-    // externals:{
-    //     'creajs':'window.creajs'
-    // },
     entry: {
         index: APP_PATH + '/index',
         circle: APP_PATH + '/circle',
@@ -42,6 +39,7 @@ module.exports = {
         more_ball: APP_PATH + '/more_ball',
         shoot_balls: APP_PATH + '/shoot_balls/app',
         typing_game: APP_PATH + '/shoot_balls/typing_game',
+        sin_cos: APP_PATH + '/trigonometry/app',
 
     },
     output: {
