@@ -18,11 +18,12 @@ class Ball {
         this.lineWidth = 1;
         this.text = '';
         this.textSize = 12;
+        this.textColor = '#CCC';
     }
 
     setText(context) {
         context.save();
-        context.strokeStyle = "#CCC";
+        context.strokeStyle = this.textColor;
         context.font = 'italic ' + this.textSize + 'px sans-serif';
         context.textBaseline = 'top';
         //填充字符串
