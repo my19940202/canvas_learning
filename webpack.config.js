@@ -38,6 +38,7 @@ module.exports = {
         bounce_ball: APP_PATH + '/bounce_ball',
         more_ball: APP_PATH + '/more_ball',
         shoot_balls: APP_PATH + '/shoot_balls/app',
+        // 打字游戏
         typing_game: APP_PATH + '/shoot_balls/typing_game',
         // 三角函数相关操作
         sin_cos: APP_PATH + '/trigonometry/app',
@@ -46,6 +47,8 @@ module.exports = {
         // 缓动和弹动
         move_ease: APP_PATH + '/move_ease/app',
         move_spring: APP_PATH + '/move_ease/move_spring',
+        // 俄罗斯游戏的实现
+        tetris: APP_PATH + '/tetris/app',
     },
     output: {
         publicPath,
