@@ -17,6 +17,13 @@
         html {
             -webkit-tap-highlight-color: transparent;
         }
+        body {
+            background: #FFF;
+            overflow: hidden;
+        }
+        canvas {
+            background: #DDD;
+        }
     </style>
 <body>
     <script type="text/javascript">
@@ -34,3 +41,7 @@
     <script type="text/javascript" src="/tetris.js"></script>
 </body>
 </html>
+<!-- 
+实际感觉这个俄罗斯方块的普遍实现办法都是采用矩阵的处理办法
+像这种直接采用box 在box堆放和消除一整行时不好处理
+-->

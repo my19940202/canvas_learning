@@ -1,27 +1,39 @@
 import {Global} from '../global';
-// import {utils} from '../tools/utils';
+import {utils} from '../tools/utils';
 import {Box} from '../tools/Box';
 let canvas = Global.canvas;
 let ctx = Global.ctx;
 
 window.onload = function(){
-    let box = new Box(20, 20);
-    box.x = 0;
-    box.y = 0;
-    box.textSize = 20;
-    box.textColor = '#FFF';
+    let activebox = new Box(100, 100);
+    activebox.x = 0;
+    activebox.y = 0;
+    activebox.bottomPos = canvas.height;
+    activebox.textSize = 20;
+    activebox.textColor = '#FFF';
        
     let gravity = 0.2,
     bounce = -0.5;
-    let boxArr = [box];
-    box.draw(ctx)
+    let boxArr = [activebox];
+    activebox.draw(ctx)
     //碰撞检测
     function checkGround(obj) {
-        if(obj.y + obj.height >= canvas.height){
-           obj.y = canvas.height - obj.height;
+        if(obj.y + obj.height >= obj.bottomPos) {
+           obj.y = obj.bottomPos - obj.height;
            obj.vy *= bounce;
         }
     }
+
+    let createBox = function () {
+        let size = Math.floor(Math.random() * 100);
+        activebox = new Box(size, size);
+        activebox.textSize = size;
+        activebox.y = 0;
+        activebox.bottomPos = canvas.height;
+        activebox.y = 0;
+        activebox.x = Math.floor(Math.random() * (canvas.width - size));
+        boxArr.push(activebox);
+    };
 
     // 帧绘制
     function oneFrame() {
@@ -30,16 +42,28 @@ window.onload = function(){
         ctx.font = 'italic 14px sans-serif';
         ctx.textBaseline = 'top';
         ctx.fillText('俄罗斯方块测试', 0, 4);
-
         boxArr.map(function (val) {
-            box.vy += gravity;
-            box.y += box.vy;
-            if (Math.abs(box.y + box.height - canvas.height) <= 1 && box.vy == 0) {
-                box.y = canvas.height - obj.height;
+            val.vy += gravity;
+            val.y += val.vy;
+            if (val === activebox) {
+                // 处理接触到bottom的box
+                if (Math.abs(val.y + val.height - canvas.height) <= 1 && Math.abs(val.vy) <= 0.2) {
+                    val.y = canvas.height - val.height;
+                    val.vy = 0;
+                    // 静止后再new Box
+                    createBox();
+                }
             }
-
-            checkGround(box);
-            box.draw(ctx);
+            else {
+                if (utils.intersects(val, activebox)) {
+                    activebox.y = val.y - activebox.height;
+                    activebox.vy *= bounce;
+                    activebox.bottomPos = activebox.y + activebox.height;
+                    createBox();
+                }
+            }
+            checkGround(val);
+            val.draw(ctx);
         });
     }
 
@@ -58,13 +82,4 @@ window.onload = function(){
                 break;
         };
     }, false);
-
-    // setInterval(function () {
-    //     let box = new Box(20, 20);
-    //     box.x = Math.floor(Math.random() * (canvas.width - box.width));
-    //     box.y = 100;
-    //     box.textSize = 20;
-    //     box.textColor = 'red';
-    //     boxArr.push(box);
-    // }, 1000)
 }
