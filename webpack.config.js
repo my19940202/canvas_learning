@@ -49,6 +49,8 @@ module.exports = {
         move_spring: APP_PATH + '/move_ease/move_spring',
         // 俄罗斯游戏的实现
         tetris: APP_PATH + '/tetris/app',
+        // 俄罗斯游戏的实现
+        rotate: APP_PATH + '/rotate/app',
     },
     output: {
         publicPath,

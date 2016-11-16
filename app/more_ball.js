@@ -1,6 +1,6 @@
 import {Global} from './global';
 import {utils} from './tools/utils';
-import {Ball} from './tools/Balls';
+import {Ball} from './tools/Ball';
 let canvas = Global.canvas;
 let ctx = Global.ctx;
 // 感觉好玩 mousemove click 产生小球 但是没有

@@ -1,5 +1,5 @@
 import {Global} from '../global';
-import {Ball} from '../tools/Balls';
+import {Ball} from '../tools/Ball';
 import {utils} from '../tools/utils';
 let canvas = Global.canvas;
 let ctx = Global.ctx;

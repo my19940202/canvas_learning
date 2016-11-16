@@ -1,7 +1,7 @@
 // 关于速度与加速度的学习
 import {Global} from './global';
 import {utils} from './tools/utils';
-import {Ball} from './tools/Balls';
+import {Ball} from './tools/Ball';
 let canvas = Global.canvas;
 let ctx = Global.ctx;
 
