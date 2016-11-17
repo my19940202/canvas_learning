@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
-    <meta content="yes" name="apple-mobile-web-app-capable">    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta name="full-screen" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title>关于旋转的实践</title>
+    <title>动量守恒</title>
     <style type="text/css">
         * {
             padding: 0;
@@ -37,6 +38,10 @@
             document.body.style = 'width:' + size.width + 'px;height:' + size.height + 'px;';
             document.body.appendChild(myCanvas);
     </script>
-    <script type="text/javascript" src="/rotate.js"></script>
+    <script type="text/javascript" src="/momentum.js"></script>
 </body>
 </html>
+<!-- 
+实际感觉这个俄罗斯方块的普遍实现办法都是采用矩阵的处理办法
+像这种直接采用box 在box堆放和消除一整行时不好处理
+-->

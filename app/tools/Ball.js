@@ -17,7 +17,7 @@ class Ball {
         this.color = utils.parseColor(color);
         this.lineWidth = 1;
         this.text = '';
-        this.textSize = 12;
+        this.textSize = this.radius;
         this.textColor = '#CCC';
     }
 
